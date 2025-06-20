@@ -7,11 +7,11 @@
     "dev": "nodemon src/index.ts",
     "start": "node dist/index.js",
     "build": "tsc"
-    },
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "module",
+  "type": "commonjs",
   "dependencies": {
     "@neondatabase/serverless": "^1.0.1",
     "cors": "^2.8.5",
@@ -25,6 +25,10 @@
     "@types/cron": "^2.0.1",
     "@types/dotenv": "^6.1.1",
     "@types/express": "^5.0.3",
-    "nodemon": "^3.1.10"
+    "drizzle-kit": "^0.31.1",
+    "nodemon": "^3.1.10",
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.8.3"
   }
 }

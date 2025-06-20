@@ -1,9 +1,9 @@
 import express from 'express';
-import { ENV_VARIABLES } from './configs/configs';
+import { ENV } from './configs/env';
 
 
 const app = express();
-
-app.listen(ENV_VARIABLES.PORT, () => {
-    console.log(`Server is running on: http://localhost:${ENV_VARIABLES.PORT}`);
+const PORT = ENV.PORT;
+app.listen(PORT, () => {
+    console.log(`Server is running on: http://localhost:${PORT}`);
 })
