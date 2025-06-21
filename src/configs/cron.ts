@@ -1,9 +1,9 @@
-import cron from 'cron'
+import { CronJob } from 'cron'
 import https from 'https'
 import { ENV } from './env'
 
-const cronJob = new cron.CronJob(
-    '*/14 * * * *', // Runs every day at midnight
+const cronJob = new CronJob(
+    '*/14 * * * *', // Runs every 14 minutes
     () => {
         https
             .get(ENV.API_URL, (res) => {

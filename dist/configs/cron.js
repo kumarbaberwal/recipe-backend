@@ -3,10 +3,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const cron_1 = __importDefault(require("cron"));
+const cron_1 = require("cron");
 const https_1 = __importDefault(require("https"));
 const env_1 = require("./env");
-const cronJob = new cron_1.default.CronJob('*/14 * * * *', // Runs every day at midnight
+const cronJob = new cron_1.CronJob('*/14 * * * *', // Runs every 14 minutes
 () => {
     https_1.default
         .get(env_1.ENV.API_URL, (res) => {
