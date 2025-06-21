@@ -58,3 +58,25 @@ export const deleteFavorite = async (req: Request, res: Response): Promise<any> 
         });
     }
 }
+
+export const getFavourites = async (req: Request, res: Response): Promise<any> => {
+    try {
+        const { userId } = req.params;
+
+        if (!userId) {
+            return res.status(400).json({
+                error: "Missing userId",
+            });
+        }
+
+        const userFavorites = await db.select().from(favorites).where(eq(favorites.userId, userId));
+
+        res.status(200).json(userFavorites);
+
+    } catch (error) {
+        console.log("Error in getFavourites:", error);
+        res.status(500).json({
+            error: "Something went wrong",
+        });
+    }
+}
